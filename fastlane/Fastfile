@@ -75,12 +75,17 @@ platform :ios do
 
   desc "Build for App Store submission"
   lane :build_appstore do
-    sync_signing_assets(type: "appstore")
-    increment_build_number
-    gym(
-      output_directory: "build_Appstore",
-      export_method: "app-store"
-    )
+    ensure_git_status_clean
+    ensure_git_branch(branch: "stage")
+    git_pull
+
+
+    # sync_signing_assets(type: "appstore")
+    # increment_build_number
+    # gym(
+    #   output_directory: "build_Appstore",
+    #   export_method: "app-store"
+    # )
   end
 
 
