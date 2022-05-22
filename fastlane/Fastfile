@@ -2,7 +2,7 @@ default_platform(:ios)
 
 platform :ios do
 
-  slack_hook = "https://hooks.slack.com/services/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"
+  slack_hook = "https://hooks.slack.com/services/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"
 
   lane :register_app do
     produce(
