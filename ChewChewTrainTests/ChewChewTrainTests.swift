@@ -74,7 +74,8 @@ class ChewChewTrainTests: XCTestCase {
     let assertion = "Each Training Model Challenge should be populated"
     for challenge in TrainingModel().challenges {
       XCTAssertGreaterThan(challenge.action.count, 0, assertion)
-      XCTAssertLessThan(challenge.hint.count, 0, assertion)
+      
+      XCTAssertGreaterThan(challenge.hint.count, 0, assertion)
     }
   }
 }
