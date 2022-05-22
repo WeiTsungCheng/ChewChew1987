@@ -30,53 +30,52 @@ import XCTest
 @testable import ChewChewTrain
 
 class ChewChewTrainTests: XCTestCase {
-  
+
   override func setUp() {
   }
-  
+
   func testTrainingModelNotNil() {
     let assertion = "Training Model Challenges should not be nil"
     let trainingModel = TrainingModel()
     XCTAssertNotNil(trainingModel.challenges, assertion)
   }
-  
+
   func testTrainingModelHIsNotEmpty() {
     let assertion = "Training Model Challenges should contain at least 5 elements"
     let trainingModel = TrainingModel()
     XCTAssertGreaterThanOrEqual(trainingModel.challenges.count, 5, assertion)
   }
-  
+
   func testAction_0() {
     let assertion = "Action 0 Should be 'Sit'"
     let action = TrainingModel().challenges[0].action
     XCTAssertEqual(action.lowercased(), "sit", assertion)
   }
-  
+
   func testAction_1() {
     let assertion = "Action 1 Should be 'Stay'"
     let action = TrainingModel().challenges[1].action
     XCTAssertEqual(action.lowercased(), "stay", assertion)
   }
-  
+
   func testAction_2() {
     let assertion = "Action 2 Should be 'Heel'"
     let action = TrainingModel().challenges[2].action
     XCTAssertEqual(action.lowercased(), "heel", assertion)
   }
-  
+
   func testAction_3() {
     let assertion = "Action 3 Should be 'Bark'"
     let action = TrainingModel().challenges[3].action
     XCTAssertEqual(action.lowercased(), "bark", assertion)
   }
-  
+
   func testChallengeContainsExpectedElements() {
     let assertion = "Each Training Model Challenge should be populated"
     for challenge in TrainingModel().challenges {
       XCTAssertGreaterThan(challenge.action.count, 0, assertion)
-      
+
       XCTAssertGreaterThan(challenge.hint.count, 0, assertion)
     }
   }
 }
-

@@ -2,6 +2,8 @@ default_platform(:ios)
 
 platform :ios do
 
+  slack_hook = "https://hooks.slack.com/services/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"
+
   lane :register_app do
     produce(
       username: "forwindsun1359@gmail.com",
@@ -85,6 +87,8 @@ platform :ios do
     scan(
       devices: ["iPhone 12"]
     )
+    lint
+    document
 
     increment_build_number
     gym(
@@ -110,11 +114,17 @@ platform :ios do
 
   desc "Build for Ad Hoc submission"
   lane :build_adhoc do
+    ensure_git_status_clean
+    ensure_git_branch(branch: "stage")
+    git_pull
+
     sync_signing_assets(type: "adhoc")
 
     scan(
       devices: ["iPhone 12"]
     )
+    lint
+    document
 
     increment_build_number
     gym(
@@ -173,6 +183,28 @@ platform :ios do
   #   )
   # end
 
+
+  lane :lint do
+    swiftlint(
+    mode: :autocorrect,
+      config_file: ".swiftlint.yml",
+      output_file: "swiftlintOutput.txt",
+      ignore_exit_status: false
+    )
+  end
+
+  lane :document do
+    jazzy config: "./fastlane/jazzy.yaml"
+  end
+
+
+  lane :ping_slack do
+
+    slack(
+      message: "Hello I am fastlane",
+      slack_url: slack_hook
+    )
+  end 
 
 end
 

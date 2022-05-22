@@ -28,11 +28,13 @@
 
 import Foundation
 
+/// The Root Type for ChewChew
 struct Challenge {
 	let action: String
 	let hint: String
 }
 
+/// The Specific Chalenge The Specific ChalengeThe Specific ChalengeThe Specific ChalengeThe Specific ChalengeThe Specific ChalengeThe Specific ChalengeThe Specific ChalengeThe Specific Chalenge
 struct TrainingModel {
 	let challenges = [
     Challenge(action: "Sit", hint: "Take a seat yourself. The best teachers teach by example."),

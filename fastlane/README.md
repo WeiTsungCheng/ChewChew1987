@@ -87,6 +87,30 @@ Build for Ad Hoc submission
 
 
 
+### ios lint
+
+```sh
+[bundle exec] fastlane ios lint
+```
+
+
+
+### ios document
+
+```sh
+[bundle exec] fastlane ios document
+```
+
+
+
+### ios ping_slack
+
+```sh
+[bundle exec] fastlane ios ping_slack
+```
+
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.

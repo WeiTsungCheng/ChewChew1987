@@ -71,7 +71,7 @@ class TrainingViewController: UIViewController {
 
 	// MARK: - Class Methods
 
-  ///Present next Challenge and Update data and UI
+  /// Present next Challenge and Update data and UI
 	func presentQuestion() {
 		challengeIndex = (challengeIndex + 1) % challenges.count
 		challengeLabel.text = challenges[challengeIndex].action
@@ -87,7 +87,7 @@ class TrainingViewController: UIViewController {
 		resultStackView.isHidden = false
 	}
 
-  ///Respond to UI challenge button taps
+  /// Respond to UI challenge button taps
 	func handleResponse() {
 
 		// TODO : animate
