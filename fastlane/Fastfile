@@ -2,7 +2,7 @@ default_platform(:ios)
 
 platform :ios do
 
-  slack_hook = "https://hooks.slack.com/services/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"
+  slack_hook = "https://hooks.slack.com/services/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"
 
   lane :register_app do
     produce(
@@ -103,10 +103,19 @@ platform :ios do
 
     add_git_tag(
       grouping: "fastlane",
-      build_number: lane_context[SharedValues::VERSION_NUMBER]
+      build_number: lane_context[SharedValues::BUILD_NUMBER]
     )
 
     push_to_git_remote
+
+    v = lane_context[SharedValues::VERSION_NUMBER]
+    b = lane_contextlane_context[SharedValues::BUILD_NUMBER]
+    d = sh "date -u"
+
+    slack(
+      payload: {"FASTLANE PRODUCTION - #{v}(#{b})" => d},
+      slack_url: slack_hook
+    )
 
 
   end
@@ -201,8 +210,10 @@ platform :ios do
   lane :ping_slack do
 
     slack(
-      message: "Hello I am fastlane",
-      slack_url: slack_hook
+      message: "Hello I am fastlane From Me John",
+      slack_url: slack_hook,
+      default_payloads: [],
+      payload: {"John" => "Hello Picka"}
     )
   end 
 
