@@ -109,7 +109,7 @@ platform :ios do
     push_to_git_remote
 
     v = lane_context[SharedValues::VERSION_NUMBER]
-    b = lane_contextlane_context[SharedValues::BUILD_NUMBER]
+    b = lane_context[SharedValues::BUILD_NUMBER]
     d = sh "date -u"
 
     slack(
