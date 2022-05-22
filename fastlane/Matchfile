@@ -1,0 +1,10 @@
+git_url("git@github.com:WeiTsungCheng/Certificate-chewchew1987.git")
+
+git_branch("main")
+
+storage_mode("git")
+
+type("development")
+
+force_for_new_devices(true)
+

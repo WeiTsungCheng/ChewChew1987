@@ -1,0 +1,149 @@
+default_platform(:ios)
+
+platform :ios do
+
+  lane :register_app do
+    produce(
+      username: "forwindsun1359@gmail.com",
+      app_identifier: "com.razeware.chewchew1987",
+      app_name: "chewchew1987",
+      team_name: "WEI-TSUNG CHENG",
+      itc_team_name: "WEI-TSUNG CHENG"
+    )
+  end
+
+  # lane :sandbox_cert do 
+  #   cert(
+  #     username: "forwindsun1359@gmail.com",
+  #     team_name: "WEI-TSUNG CHENG",
+  #     development: true
+  #   )
+  # end
+
+  # lane :sandbox_sigh do
+  #   sigh(
+  #     username: "forwindsun1359@gmail.com",
+  #     team_name: "WEI-TSUNG CHENG",
+  #     app_identifier: "com.razeware.chewchew1987",
+  #     development: true
+  #   )
+  # end
+
+  lane :get_dev_cert_and_sign do
+    cert(development: true)
+    sigh(development: true)
+  end
+
+  
+  desc "Update iOS UDID's on the Developer Portal"
+  lane :sync_device_info do
+    register_devices(
+      devices_file: "fastlane/Devicefile"
+      )
+  end
+
+  desc "Sync team Code-Signing assets"
+  lane :sync_signing_assets do |options| 
+    sync_device_info
+    selectedType = options[:type]
+    match(type: selectedType)
+  end
+
+
+
+  # desc "Re-obtain match code-signing credentials after switching to a Beginning or Ending project folder"
+  # lane :bootstrap_code_signing do
+  #   sync_device_info
+  #   match(type: "development")
+  #   match(type: "adhoc")
+  #   match(type: "appstore")
+  # end
+
+
+  # lane :sandbox do
+  #   gym(
+  #     scheme: "ChewChewTrain",
+  #     output_directory: "build_AdHoc",
+  #     export_method: "ad-hoc",
+  #     export_options: {
+  #       provisioningProfiles: {
+  #         "com.razeware.chewchew1987" => "match AdHoc com.razeware.chewchew1987"
+  #       }
+  #     }
+  #   )
+  # end
+
+  desc "Build for App Store submission"
+  lane :build_appstore do
+    sync_signing_assets(type: "appstore")
+    increment_build_number
+    gym(
+      output_directory: "build_Appstore",
+      export_method: "app-store"
+    )
+  end
+
+
+  desc "Build for Ad Hoc submission"
+  lane :build_adhoc do
+    sync_signing_assets(type: "adhoc")
+    increment_build_number
+    gym(
+      output_directory: "build_AdHoc",
+      export_method: "ad-hoc"
+    )
+  end
+
+  # lane :sandbox_pilot do 
+  #   pilot
+  # end
+
+  lane :distribute_to_appstore do
+    build_appstore
+    pilot(
+      ipa: "./build_Appstore/ChewChewTrain.ipa",
+      team_name: "WEI-TSUNG CHENG",
+      changelog: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+
+  lane :distribute_to_installer do
+    build_adhoc
+    installr(
+      api_token: "k6IicYC0Q4ygRi6sj2OWAVtOZ6k7aHX0",
+      ipa: "./build_AdHoc/ChewChewTrain.ipa",
+      notes: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+
+
+  lane :release do 
+    precheck
+    build_appstore
+  #  UI.success "Still running"
+    snapshot
+    frameit(gold: true)
+    deliver(
+      ipa: "./build_Appstore/ChewChewTrain.ipa",
+      run_precheck_before_submit: false,
+      force: true,
+      team_name: "WEI-TSUNG CHENG"
+    )
+  end
+
+  # lane :sandbox do
+  #   frameit(path: "./fastlane/screenshots")
+  # end
+
+
+  # lane :sandbox do
+  #   deliver( 
+  #     ipa: "./build_Appstore/ChewChewTrain.ipa",
+  #     force: true,
+  #     submit_for_review: true
+  #   )
+  # end
+
+
+end
+
