@@ -2,7 +2,7 @@ default_platform(:ios)
 
 platform :ios do
 
-  slack_hook = "https://hooks.slack.com/services/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"
+  slack_hook = "https://hooks.slack.com/services/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"
 
   lane :register_app do
     produce(
@@ -77,7 +77,7 @@ platform :ios do
 
   desc "Build for App Store submission"
   lane :build_appstore do
-    ensure_git_status_clean
+#    ensure_git_status_clean
     ensure_git_branch(branch: "stage")
     git_pull
 
@@ -217,5 +217,11 @@ platform :ios do
     )
   end 
 
+  lane :cocoapods do
+    cocoapods(
+      clean_install: true,
+      podfile: "./Podfile"
+    )
+  end
 end
 

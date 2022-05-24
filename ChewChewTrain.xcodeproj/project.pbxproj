@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A339AD9DC289EBFC57C7AB /* Pods_ChewChewTrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65370B7ED66011B07FCFC253 /* Pods_ChewChewTrain.framework */; };
 		5C2901831F8F6DE700803663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */; };
+		A2EB4329FEFD0575A1BD815D /* Pods_ChewChewTrainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9C54D827EAD952F66D2FB5 /* Pods_ChewChewTrainTests.framework */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -37,7 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E9C54D827EAD952F66D2FB5 /* Pods_ChewChewTrainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChewChewTrainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B3A8C05AAB28CA618791EB /* Pods-ChewChewTrain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewChewTrain.debug.xcconfig"; path = "Target Support Files/Pods-ChewChewTrain/Pods-ChewChewTrain.debug.xcconfig"; sourceTree = "<group>"; };
+		526C078F40C25610AEF26E5E /* Pods-ChewChewTrainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewChewTrainTests.debug.xcconfig"; path = "Target Support Files/Pods-ChewChewTrainTests/Pods-ChewChewTrainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65370B7ED66011B07FCFC253 /* Pods_ChewChewTrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChewChewTrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		909A576844C7375A0E0DCEF6 /* Pods-ChewChewTrain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewChewTrain.release.xcconfig"; path = "Target Support Files/Pods-ChewChewTrain/Pods-ChewChewTrain.release.xcconfig"; sourceTree = "<group>"; };
+		C1D3629C1161F91E91EA078B /* Pods-ChewChewTrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChewChewTrainTests.release.xcconfig"; path = "Target Support Files/Pods-ChewChewTrainTests/Pods-ChewChewTrainTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* ChewChewTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChewChewTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A339AD9DC289EBFC57C7AB /* Pods_ChewChewTrain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2EB4329FEFD0575A1BD815D /* Pods_ChewChewTrainTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9CBFC706FE90BC6FD7B41F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48B3A8C05AAB28CA618791EB /* Pods-ChewChewTrain.debug.xcconfig */,
+				909A576844C7375A0E0DCEF6 /* Pods-ChewChewTrain.release.xcconfig */,
+				526C078F40C25610AEF26E5E /* Pods-ChewChewTrainTests.debug.xcconfig */,
+				C1D3629C1161F91E91EA078B /* Pods-ChewChewTrainTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D2A5F1F71F4A9143005CD714 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,7 @@
 				F48602862837808F00680ABB /* FastlaneSnapshots */,
 				D2A5F2011F4A9144005CD714 /* Products */,
 				D32EEDD221D5A5D000B3463C /* Frameworks */,
+				C9CBFC706FE90BC6FD7B41F1 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -121,6 +144,8 @@
 		D32EEDD221D5A5D000B3463C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65370B7ED66011B07FCFC253 /* Pods_ChewChewTrain.framework */,
+				1E9C54D827EAD952F66D2FB5 /* Pods_ChewChewTrainTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "ChewChewTrain" */;
 			buildPhases = (
+				01E9E43CEF97FC5B547EF83B /* [CP] Check Pods Manifest.lock */,
 				D2A5F1FC1F4A9144005CD714 /* Sources */,
 				D2A5F1FD1F4A9144005CD714 /* Frameworks */,
 				D2A5F1FE1F4A9144005CD714 /* Resources */,
@@ -168,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3E4C003228B6E54009620CD /* Build configuration list for PBXNativeTarget "ChewChewTrainTests" */;
 			buildPhases = (
+				81EBFE6696D721EBA420EAF3 /* [CP] Check Pods Manifest.lock */,
 				D3E4BFF8228B6E54009620CD /* Sources */,
 				D3E4BFF9228B6E54009620CD /* Frameworks */,
 				D3E4BFFA228B6E54009620CD /* Resources */,
@@ -308,6 +335,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01E9E43CEF97FC5B547EF83B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChewChewTrain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81EBFE6696D721EBA420EAF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChewChewTrainTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2A5F1FC1F4A9144005CD714 /* Sources */ = {
@@ -480,6 +554,7 @@
 		};
 		D2A5F2131F4A9144005CD714 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48B3A8C05AAB28CA618791EB /* Pods-ChewChewTrain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -504,6 +579,7 @@
 		};
 		D2A5F2141F4A9144005CD714 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 909A576844C7375A0E0DCEF6 /* Pods-ChewChewTrain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -527,6 +603,7 @@
 		};
 		D3E4C004228B6E54009620CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 526C078F40C25610AEF26E5E /* Pods-ChewChewTrainTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -548,6 +625,7 @@
 		};
 		D3E4C005228B6E54009620CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1D3629C1161F91E91EA078B /* Pods-ChewChewTrainTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;

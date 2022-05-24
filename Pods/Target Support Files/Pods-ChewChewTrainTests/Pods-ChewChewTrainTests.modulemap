@@ -1,0 +1,6 @@
+framework module Pods_ChewChewTrainTests {
+  umbrella header "Pods-ChewChewTrainTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
